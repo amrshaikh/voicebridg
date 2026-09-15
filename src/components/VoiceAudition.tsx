@@ -62,7 +62,7 @@ export function VoiceAudition() {
 
   // Simulation of audio playback timer
   useEffect(() => {
-    let timer: NodeJS.Timeout
+    let timer: ReturnType<typeof setInterval>
     if (isPlaying) {
       timer = setInterval(() => {
         setProgress(prev => {
