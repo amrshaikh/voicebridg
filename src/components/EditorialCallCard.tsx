@@ -18,14 +18,14 @@ export function EditorialCallCard() {
   ]
 
   return (
-    <div className="hero-portrait-wrapper relative max-w-[490px] justify-self-end w-full group">
+    <div className="hero-portrait-wrapper relative max-w-[490px] mx-auto md:justify-self-end w-full group">
       {/* Ambient background aura behind the card */}
       <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/15 via-cyan-400/10 to-transparent rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
       {/* Physical Specimen Frame */}
-      <div className="portrait-frame bg-[#dbe8e5] p-3.5 pb-0 shadow-xl shadow-teal-950/5 transform rotate-[2deg] rounded-xl transition-all duration-300 group-hover:rotate-0 group-hover:shadow-2xl">
+      <div className="portrait-frame bg-[#dbe8e5] p-2.5 sm:p-3.5 pb-0 shadow-xl shadow-teal-950/5 transform rotate-0 md:rotate-[2deg] rounded-xl transition-all duration-300 group-hover:rotate-0 group-hover:shadow-2xl">
         {/* Paper Specimen Card */}
-        <div className="bg-white border border-[#c4dbd6] p-6 text-[#071c2a] min-h-[440px] flex flex-col justify-between relative overflow-hidden rounded-lg shadow-sm">
+        <div className="bg-white border border-[#c4dbd6] p-4 sm:p-6 text-[#071c2a] min-h-[400px] sm:min-h-[440px] flex flex-col justify-between relative overflow-hidden rounded-lg shadow-sm">
           {/* Top header bar */}
           <div className="flex items-center justify-between pb-3 border-b border-slate-100 font-mono text-[10px] tracking-widest text-[#567471] uppercase">
             <span className="flex items-center gap-2">
@@ -38,20 +38,20 @@ export function EditorialCallCard() {
           </div>
 
           {/* Centerpiece Acoustic Waveform Visualizer */}
-          <div className="my-5 py-4 px-3 bg-[#f2f8f7] border border-[#d9ebe8] rounded-xl relative overflow-hidden">
-            <div className="flex items-center justify-between text-[10px] font-mono text-[#567471] mb-3">
-              <span>Acoustic Frequency · 24kHz Neural PCM</span>
+          <div className="my-4 sm:my-5 py-3 sm:py-4 px-2 sm:px-3 bg-[#f2f8f7] border border-[#d9ebe8] rounded-xl relative overflow-hidden">
+            <div className="flex items-center justify-between text-[10px] font-mono text-[#567471] mb-3 gap-2">
+              <span className="truncate">Acoustic · 24kHz PCM</span>
               <button
                 type="button"
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="text-[#0d9488] hover:text-[#0b7a70] cursor-pointer font-sans text-xs font-semibold flex items-center gap-1 transition-colors"
+                className="text-[#0d9488] hover:text-[#0b7a70] cursor-pointer font-sans text-xs font-semibold flex items-center gap-1 transition-colors shrink-0"
               >
-                {isPlaying ? 'Pause Audio' : 'Play Audio'}
+                {isPlaying ? 'Pause' : 'Play'}
               </button>
             </div>
 
             {/* Equalizer Waveform Lines */}
-            <div className="h-16 flex items-center justify-between gap-1 px-1">
+            <div className="h-14 sm:h-16 flex items-center justify-between gap-0.5 sm:gap-1 px-0.5">
               {waveformHeights.map((h, i) => {
                 const isPulse = isPlaying && Math.abs(i - activeBarIndex) <= 2
                 const height = isPulse ? Math.min(100, h + 25) : h
@@ -94,7 +94,7 @@ export function EditorialCallCard() {
           </div>
 
           {/* Bottom Analyst Flag */}
-          <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between font-mono text-[10px] text-[#648480]">
+          <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between flex-wrap gap-2 font-mono text-[10px] text-[#648480]">
             <span>Analyst Agent: Objection solved</span>
             <span className="text-[#0d9488] font-semibold bg-teal-50 px-2 py-0.5 rounded">
               Verified Resolution
