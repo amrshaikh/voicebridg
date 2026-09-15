@@ -35,7 +35,24 @@ body {
   min-width: 320px;
   background-color: var(--bg-canvas);
   color: var(--ink-main);
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+#root {
+  width: 100%;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.app-container > main {
+  flex: 1;
+  width: 100%;
 }
 
 a {
@@ -49,18 +66,24 @@ a {
 }
 
 /* NAVIGATION */
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(247, 251, 250, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(7, 28, 42, 0.08);
+}
+
 .nav {
   height: 92px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(7, 28, 42, 0.08);
-  background: rgba(247, 251, 250, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 40;
 }
 
 .wordmark {
@@ -646,7 +669,6 @@ h2 {
   padding: 22px 28px;
   background: #ffffff;
   border: 1px solid var(--border-subtle);
-  border-left: 4px solid #0d9488;
   border-radius: 8px;
   font-size: 14px;
   color: #071c2a;
@@ -658,7 +680,7 @@ h2 {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #0d9488;
+  color: #071c2a;
 }
 
 /* OUTCOMES BANNER */
@@ -1186,8 +1208,13 @@ input[type="range"] {
 }
 
 /* FOOTER */
-.footer {
+.footer-wrapper {
+  width: 100%;
   border-top: 1px solid var(--border-subtle);
+  background: var(--bg-canvas);
+}
+
+.footer {
   padding: 34px 0 45px;
   display: flex;
   justify-content: space-between;

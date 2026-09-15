@@ -139,33 +139,36 @@ export default function App() {
   }
 
   return (
-    <main>
-      {/* STICKY EDITORIAL NAVIGATION */}
-      <nav className="nav shell">
-        <a className="wordmark" href="#" aria-label="VoiceBridg home">
-          <span className="wordmark-mark">V</span>
-          <span>Voice<span className="accent">Bridg</span></span>
-        </a>
-        <div className="nav-links">
-          <a href="#problem">Why VoiceBridg</a>
-          <a href="#features">Features</a>
-          <a href="#how">How it works</a>
-          <a href="#usecases">Use cases</a>
-          <a href="#plans">Plans</a>
-          <a href="#calculator">Calculator</a>
-          <a href="https://app.voicebridg.com/login" target="_blank" rel="noreferrer" className="login-link">
-            Login
+    <div className="app-container">
+      {/* STICKY NAVIGATION */}
+      <header className="nav-wrapper">
+        <nav className="nav shell">
+          <a className="wordmark" href="#" aria-label="VoiceBridg home">
+            <span className="wordmark-mark">V</span>
+            <span>Voice<span className="accent">Bridg</span></span>
           </a>
-        </div>
-        <div className="nav-actions">
-          <a className="nav-cta" href="#demo">
-            Request Demo <Arrow />
-          </a>
-        </div>
-      </nav>
+          <div className="nav-links">
+            <a href="#problem">Why VoiceBridg</a>
+            <a href="#features">Features</a>
+            <a href="#how">How it works</a>
+            <a href="#usecases">Use cases</a>
+            <a href="#plans">Plans</a>
+            <a href="#calculator">Calculator</a>
+            <a href="https://app.voicebridg.com/login" target="_blank" rel="noreferrer" className="login-link">
+              Login
+            </a>
+          </div>
+          <div className="nav-actions">
+            <a className="nav-cta" href="#demo">
+              Request Demo <Arrow />
+            </a>
+          </div>
+        </nav>
+      </header>
 
-      {/* HERO SECTION */}
-      <section className="hero shell">
+      <main>
+        {/* HERO SECTION */}
+        <section className="hero shell">
         <div className="hero-copy">
           <p className="eyebrow">
             <span className="eyebrow-dot" /> AI voice agents that learn every call
@@ -580,18 +583,21 @@ export default function App() {
           </div>
         </div>
       </section>
+      </main>
 
       {/* FOOTER */}
-      <footer className="footer shell">
-        <a className="wordmark" href="#">
-          <span className="wordmark-mark">V</span>
-          <span>Voice<span className="accent">Bridg</span></span>
-        </a>
-        <span>Voice AI that gets better every call · © 2026 Interactively Solutions Pvt Ltd. All Rights Reserved.</span>
-        <a href="mailto:hello@voicebridg.com">
-          hello@voicebridg.com <Arrow />
-        </a>
+      <footer className="footer-wrapper">
+        <div className="footer shell">
+          <a className="wordmark" href="#">
+            <span className="wordmark-mark">V</span>
+            <span>Voice<span className="accent">Bridg</span></span>
+          </a>
+          <span>Voice AI that gets better every call · © 2026 Interactively Solutions Pvt Ltd. All Rights Reserved.</span>
+          <a href="mailto:hello@voicebridg.com">
+            hello@voicebridg.com <Arrow />
+          </a>
+        </div>
       </footer>
-    </main>
+    </div>
   )
 }
